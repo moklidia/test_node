@@ -17,12 +17,9 @@ const messages = [
 ];
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-
-  const body = messages.join(' | ')
-
-  res.end(body);
+  res.statusCode = 404;
+  res.setHeader('Content-Type', 'application/json');
+  res.end();
 });
 
 server.listen(port, hostname, () => {
